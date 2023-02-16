@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Supplies = () => {
     const [supplies, setSupplies] = useState([]);
@@ -20,7 +21,7 @@ const Supplies = () => {
     return ( 
         <div className="p-4">
             <h1 className="text-center w-full font-bold text-xl">Supplies</h1>
-            <div className="mt-4 grid grid-cols-3">
+            <div className="mt-4 grid grid-cols-3 gap-2">
                 {supplies.map(supply=>(
                     <div key={supply.id} className="mx-auto">
                         <div>
@@ -31,6 +32,7 @@ const Supplies = () => {
                     </div>
                 ))}
             </div>
+            <button><Link to="/add">Add new supply</Link></button>
         </div>
      );
 }
